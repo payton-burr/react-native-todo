@@ -17,7 +17,7 @@ const App = () => {
   const addItem = (item) => {
 
     if(!item) {
-      Alert.alert('Error', 'Text field cannot be blank', {text: 'Ok'});
+      Alert.alert('Error', 'Text field cannot be blank', [{text: 'Ok'}]);
     } else {
       setItems(prevItems => {
         return [{id: Math.random().toString(), text: item},...prevItems]
