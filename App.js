@@ -10,13 +10,17 @@ const App = () => {
     {id: Math.random().toString(), text: 'Study for test'},
   ]);
 
-
+  const deleteItem = (id) => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id != id);
+    })
+  }
 
 
   return (
     <View style={styles.container}>
       <Header />
-      <FlatList data={items} renderItem={({item}) => <Task item={item}/>}
+      <FlatList data={items} renderItem={({item}) => <Task item={item} deleteItem={deleteItem}/>}
       />
     </View>
   )
